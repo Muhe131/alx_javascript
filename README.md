@@ -1,0 +1,1 @@
+This Repository Solves all tasks related with javascript
