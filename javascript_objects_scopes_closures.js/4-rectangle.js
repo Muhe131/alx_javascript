@@ -2,9 +2,9 @@
 /**
  * Check the parameters provided
  */
-class Rectangle {
+module.exports = class Rectangle {
   constructor (w, h) {
-    if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
+    if (w > 0 && h > 0) {
       this.width = w;
       this.height = h;
     }
@@ -12,27 +12,16 @@ class Rectangle {
 
   print () {
     for (let i = 0; i < this.height; i++) {
-      let myVar = '';
-      let y = 0;
-      while (y < this.width) {
-        myVar += 'X';
-        y++;
+      console.log('x'.repeat(this.width));
       }
-
-      console.log(myVar);
     }
-  }
 
   rotate () {
-    let temp = 0;
-    temp = this.width;
-    this.width = this.height;
-    this.height = temp;
+    [this.width, this.height] = [this.height, this.width];
   }
 
   double () {
     this.width *= 2;
     this.height *= 2;
   }
-}
-module.exports = Rectangle;
+};
